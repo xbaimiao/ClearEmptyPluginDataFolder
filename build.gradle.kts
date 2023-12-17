@@ -11,6 +11,7 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    maven("https://maven.xbaimiao.com/repository/maven-public/")
     google()
 }
 
@@ -20,6 +21,7 @@ dependencies {
     // (in a separate module for demo project and in testMain).
     // With compose.desktop.common you will also lose @Preview functionality
     implementation(compose.desktop.currentOs)
+    implementation("public:yaml:1.0.0")
 }
 
 compose.desktop {
@@ -28,7 +30,7 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "ComposeForDesktop"
+            packageName = "ClearEmptyPluginDataFolder"
             packageVersion = "1.0.0"
         }
     }
